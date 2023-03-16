@@ -7,7 +7,7 @@ function App() {
   ]
 
   return (
-    <div className='App'>
+    <div>
       <h1>Olá Tiago!</h1>
       <Expenses expenses={expenses} />
     </div>
