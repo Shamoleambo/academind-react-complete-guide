@@ -1,6 +1,6 @@
 import Expenses from './components/Expenses/Expenses'
 
-function App() {
+const App = () => {
   const expenses = [
     { title: 'Car Insurance', amount: 301.55, date: new Date(2021, 2, 16) },
     { title: 'Food', amount: 30, date: new Date(2021, 2, 18) }
