@@ -1,4 +1,4 @@
-const ExpensesFilter = ({ expenses }) => {
+const ExpensesFilter = ({ expenses, onYearFilter }) => {
   const yearsArray = expenses.reduce((acc, expense) => {
     const dateYear = expense.date.getFullYear()
 
@@ -14,11 +14,16 @@ const ExpensesFilter = ({ expenses }) => {
     return acc
   }, [])
 
+  const selectYearHandler = event => {
+    onYearFilter(event.target.value)
+  }
+
   return (
     <div className='expenses-filter__container'>
-      <select>
+      <select onChange={selectYearHandler}>
+        <option value=''>--Pick a Year--</option>
         {yearsArray.map(year => (
-          <option>{year}</option>
+          <option value={year}>{year}</option>
         ))}
       </select>
     </div>
