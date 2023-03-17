@@ -7,7 +7,7 @@ const Expenses = ({ expenses }) => {
   return (
     <Card className='expenses'>
       <div className='expenses-filter'>
-        <ExpensesFilter />
+        <ExpensesFilter expenses={expenses} />
       </div>
       {expenses.map(expense => (
         <ExpenseItem
