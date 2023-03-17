@@ -1,3 +1,5 @@
+import './ExpensesFilter.css'
+
 const ExpensesFilter = ({ expenses, onYearFilter }) => {
   const yearsArray = expenses.reduce((acc, expense) => {
     const dateYear = expense.date.getFullYear()
