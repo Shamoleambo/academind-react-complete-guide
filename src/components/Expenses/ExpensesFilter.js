@@ -1,20 +1,22 @@
 import './ExpensesFilter.css'
 
 const ExpensesFilter = ({ expenses, onYearFilter }) => {
-  const yearsArray = expenses.reduce((acc, expense) => {
-    const dateYear = expense.date.getFullYear()
+  const yearsArray = expenses
+    .reduce((acc, expense) => {
+      const dateYear = expense.date.getFullYear()
 
-    if (acc.length === 0) {
-      acc.push(dateYear)
-      return acc
-    }
+      if (acc.length === 0) {
+        acc.push(dateYear)
+        return acc
+      }
 
-    if (!acc.find(date => date === dateYear)) {
-      acc.push(dateYear)
+      if (!acc.find(date => date === dateYear)) {
+        acc.push(dateYear)
+        return acc
+      }
       return acc
-    }
-    return acc
-  }, [])
+    }, [])
+    .sort((a, b) => a - b)
 
   const selectYearHandler = event => {
     onYearFilter(event.target.value)
